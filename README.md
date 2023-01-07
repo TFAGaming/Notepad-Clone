@@ -1,6 +1,9 @@
 # Notepad-Clone v1.0.0
 This is not a 100% clone, but a similar one! This all made in Python and can be turned into an executable file (.exe) using [pyinstaller](https://pyinstaller.org/en/stable/)!
 
+## Preview
+![2023-01-07 20_55_22-APP](https://user-images.githubusercontent.com/92172698/211168245-299e6827-4a88-4c84-abc4-d41163b3cd10.png)
+
 ## Change icon
 Create firstly or download an image with .png or .jpeg extension, visit a site that converts .png or .jpeg to **.ico**. Here is the site that I used to convert my image: [Convertico](https://convertico.com/).
 
