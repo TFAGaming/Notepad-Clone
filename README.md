@@ -22,8 +22,8 @@ If you see some folders that has been created automatically, congrats! Go to **d
 
 > If you want to set the icon into the .exe file, use then:
 > ```shell
-pyinstaller --onefile --icon=icon.ico main.py
-```
+> pyinstaller --onefile --icon=icon.ico main.py
+> ```
 
 Enjoy! :)
 
