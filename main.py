@@ -4,8 +4,8 @@ from tkinter import messagebox as msgbox, ttk
 from tkinter.filedialog import asksaveasfilename, askopenfilename
 import datetime
 
-__AppName = 'MyNoteBook'
-__AppVersion = 'BETA 1.0.0'
+__AppName = 'Notepad Clone'
+__AppVersion = 'v1.0.0'
 
 print('[i] Started running the program.')
 print('[i] Creating the app...')
