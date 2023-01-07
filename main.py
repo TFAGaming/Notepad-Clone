@@ -284,3 +284,6 @@ editor.bind('<Control-Key-f>', lambda __uselessVarLoL: _setFont())
 print('[i] App is now running.')
 
 gui.mainloop()
+
+# All credits to TFAGaming:
+# https://github.com/TFAGaming
