@@ -5,10 +5,10 @@ from tkinter.filedialog import asksaveasfilename, askopenfilename
 import datetime
 import webbrowser
 
-__AppName = 'MyNoteBook'
+__AppName = 'Notepad clone'
 __AppVersion = 'BETA 1.0.0'
 
-print(f'{__AppName} [{__AppVersion}]\n(c) Copyright {__AppName}, all rights reserved.\n\n')
+print(f'{__AppName} [{__AppVersion}]\n(c) Copyright {__AppName}, all rights reserved.\n')
 print('[i] Starting up the app...')
 
 gui = tkinter.Tk()
