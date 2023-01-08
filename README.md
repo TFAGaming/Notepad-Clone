@@ -1,6 +1,11 @@
 # Notepad-Clone v1.0.0
 This is not a 100% clone, but a similar one! This all made in Python and can be turned into an executable file (.exe) using [pyinstaller](https://pyinstaller.org/en/stable/)!
 
+# Updates:
+1. Added scrollbar.<br>
+2. Sets automatically the default font of editor in "Set font" Top level app.<br>
+3. Webbrowser support.
+
 ## Preview
 Main: <br>
 ![2023-01-08 12_23_57-Window](https://user-images.githubusercontent.com/92172698/211193486-efe5f778-6440-42b5-bdc0-6c9fc161b98d.png)
