@@ -3,7 +3,7 @@ This is not a 100% clone, but a similar one! This all made in Python and can be 
 
 ## Preview
 Main: <br>
-![2023-01-07 20_55_22-APP](https://user-images.githubusercontent.com/92172698/211168245-299e6827-4a88-4c84-abc4-d41163b3cd10.png)
+![2023-01-08 12_23_57-Window](https://user-images.githubusercontent.com/92172698/211193486-efe5f778-6440-42b5-bdc0-6c9fc161b98d.png)
 
 Set font: <br>
 ![2023-01-07 20_58_20- Noname  - MyNoteBook](https://user-images.githubusercontent.com/92172698/211168349-af1b5177-873e-4fcc-85c1-5e41570f5186.png)
