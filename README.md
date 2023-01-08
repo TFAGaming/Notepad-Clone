@@ -27,15 +27,10 @@ Use **cd** command to navigate into the folder that your project contain the pro
 Then, use the command below to turn the **main.py** to an executable file:
 
 ```shell
-pyinstaller --onefile main.py
+pyinstaller --onefile --icon=icon.ico main.py
 ```
 
-If you see some folders that has been created automatically, congrats! Go to **dist** folder, drag the .exe file into the folder where it can read the icon.
-
-> If you want to set the icon into the .exe file, use then:
-> ```shell
-> pyinstaller --onefile --icon=icon.ico main.py
-> ```
+If you see some folders that has been created automatically, congrats! Go to **dist** folder, drag the .exe file into the folder where it can read the icon. You can delete the **dist** folder and other folders that were created.
 
 Enjoy! :)
 
