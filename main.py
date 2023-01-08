@@ -3,12 +3,13 @@ import tkinter
 from tkinter import messagebox as msgbox, ttk
 from tkinter.filedialog import asksaveasfilename, askopenfilename
 import datetime
+import webbrowser
 
-__AppName = 'Notepad Clone'
-__AppVersion = 'v1.0.0'
+__AppName = 'MyNoteBook'
+__AppVersion = 'BETA 1.0.0'
 
-print('[i] Started running the program.')
-print('[i] Creating the app...')
+print(f'{__AppName} [{__AppVersion}]\n(c) Copyright {__AppName}, all rights reserved.\n\n')
+print('[i] Starting up the app...')
 
 gui = tkinter.Tk()
 
@@ -36,6 +37,12 @@ def _setFilePath(path):
     file_path = path
 
 def _openFile():
+    if (editor.get('1.0', END) != dataFile):
+        res = msgbox.askyesno(f'{__AppName}', 'The current opened file is not saved, are you sure that you want to open another file?')
+
+        if (res == False):
+            return
+
     path = askopenfilename(filetypes=[('Text Files', '*.txt')])
 
     if path == '': return
@@ -168,11 +175,15 @@ def _setFont():
     secondGui.geometry('300x325')
     secondGui.resizable(0, 0)
 
+    defaultEditorFontData = editor['font']
+    splitted = defaultEditorFontData.split(" ")
+    defaultSize = splitted[len(splitted) - 1]
+
     frameFirst = LabelFrame(secondGui, text='Set font size')
     frameFirst.pack()
 
     fontChangerScale = Scale(frameFirst, from_=1, to=100, orient=HORIZONTAL, length=265)
-    fontChangerScale.set(15)
+    fontChangerScale.set(defaultSize)
     fontChangerScale.pack()
 
     secondFrame = LabelFrame(secondGui, text='Set font family')
@@ -209,6 +220,10 @@ def _setFont():
     buttonTEST = Button(btnsFrame, text='Test', width=10, command=lambda: __CheckData_setFont_Function(0))
     buttonTEST.pack(padx=5, pady=5, side=LEFT)
 
+def _openWebsite():
+    webbrowser.open('www.google.com')
+    return
+
 # File menu
 file_menu = tkinter.Menu(menu_bar, tearoff=0)
 file_menu.add_command(label='Open file', command=_openFile)
@@ -222,8 +237,8 @@ editor_menu = tkinter.Menu(menu_bar, tearoff=0)
 editor_menu.add_command(label='Undo', command=_undo, accelerator='(Ctrl + Z)')
 editor_menu.add_command(label='Redo', command=_redo, accelerator='(Ctrl + Y)')
 editor_menu.add_separator()
-editor_menu.add_command(label='Clear', command=_editorClear)
 editor_menu.add_command(label='Set font', command=_setFont, accelerator='(Ctrl + F)')
+editor_menu.add_command(label='Clear all text', command=_editorClear)
 menu_bar.add_cascade(label='Edit', menu=editor_menu)
 
 # Window menu
@@ -246,7 +261,7 @@ menu_bar.add_cascade(label='Window', menu=wind_menu)
 
 # Help menu
 help_menu = tkinter.Menu(menu_bar, tearoff=0)
-help_menu.add_command(label='Website', command=None, state="disabled")
+help_menu.add_command(label='Website', command=_openWebsite)
 help_menu.add_command(label='Info', command=_guiInfo)
 menu_bar.add_cascade(label='Help?', menu=help_menu)
 
@@ -257,9 +272,16 @@ gui.config(menu=menu_bar)
 frame = Frame(gui, width=gui.winfo_width(), height=gui.winfo_height())
 frame.pack()
 
+# Scroll bar
+scrollbar = Scrollbar(frame)
+scrollbar.pack(side=RIGHT, fill=Y)
+
 # Editor
-editor = tkinter.Text(frame, width=gui.winfo_width(), height=gui.winfo_height(), undo=True, font=('Times New Roman', 15))
+editor = tkinter.Text(frame, width=gui.winfo_width(), height=gui.winfo_height(), undo=True, font=('Times New Roman', 15), yscrollcommand=scrollbar)
 editor.pack(padx=5, pady=5)
+
+# Config the scroll bar
+scrollbar.config(command=editor.yview)
 
 # Editor commands
 editor_cmds = Menu(frame, tearoff=0)
