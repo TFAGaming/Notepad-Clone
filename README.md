@@ -35,6 +35,4 @@ If you see some folders that has been created automatically, congrats! Go to **d
 Enjoy! :)
 
 ## Credits:
-All credits to T.F.A#7524. If I see any copies without my credits will be taken down by me.
-
-Making your OWN application using this project without my name is **OK**, but cloning the entire project, making a video about it without my credits is **NOT OK**.
+All credits to T.F.A#7524.
